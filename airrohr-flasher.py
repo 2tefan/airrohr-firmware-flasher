@@ -12,7 +12,9 @@ import logging
 import json
 
 import requests
-from esptool import ESPLoader, erase_flash, write_flash, NotSupportedError
+from esptool import ESPLoader, erase_flash, write_flash
+from esptool.cmds import detect_chip
+from esptool.util import NotSupportedError
 
 import airrohrFlasher
 from airrohrFlasher.qtvariant import QtGui, QtCore, QtWidgets
