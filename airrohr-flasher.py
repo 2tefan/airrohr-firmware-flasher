@@ -620,7 +620,7 @@ class MainWindow(QtWidgets.QMainWindow, mainwindow.Ui_MainWindow):
         progress.emit(self.tr('Connecting...'), 0)
 
         init_baud = min(ESPLoader.ESP_ROM_BAUD, baudrate)
-        esp = ESPLoader.detect_chip(device, init_baud, 'default_reset', False)
+        esp = detect_chip(device, init_baud, 'default_reset', False)
 
         progress.emit(self.tr('Connected. Chip type: {chip_type}').format(
                       chip_type=esp.get_chip_description()), 0)
